@@ -1,11 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
 import { Text, View } from 'react-native';
 
-import { Button } from './components/button-default';
-
 import { ChevronRight, Logo } from '@/assets';
+import { Button } from '@/components/atoms/button-default';
 import { Container } from '@/components/atoms/container';
-import { styleSignIn as s } from '@/screens/public/onboarding/style';
+import { style as s } from '@/screens/public/onboarding/style';
 import theme from '@/styles/theme';
 import { RootNavigationProp } from '@/types/screens';
 

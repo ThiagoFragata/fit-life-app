@@ -1,15 +1,14 @@
 import { useNavigation } from '@react-navigation/native';
 import { Text, View } from 'react-native';
 
-import { Button } from './components/button-default';
-
 import { ChevronLeft, ChevronRight, Logo } from '@/assets';
+import { Button } from '@/components/atoms/button-default';
 import { Container } from '@/components/atoms/container';
-import { styleSignIn as s } from '@/screens/public/onboarding/style';
+import { style as s } from '@/screens/public/onboarding/style';
 import theme from '@/styles/theme';
 import { RootNavigationProp } from '@/types/screens';
 
-export function OnboardingStep4() {
+export function OnboardingStep3() {
   const { navigate, goBack } = useNavigation<RootNavigationProp>();
 
   return (
@@ -19,10 +18,10 @@ export function OnboardingStep4() {
       </View>
 
       <View style={s.content}>
-        <Text style={s.title}>Pronto para começar?</Text>
+        <Text style={s.title}>Celebre & Compartilhe</Text>
         <Text style={s.subtitle}>
-          Junte-se a nós e faça parte de uma comunidade que se apoia, se inspira e se diverte
-          enquanto busca uma vida mais saudável e ativa!
+          Compartilhe seus sucessos, desafios e momentos divertidos. Celebre suas conquistas e
+          motive outros membros a alcançarem seus próprios objetivos.
         </Text>
         <View style={s.btnContainer}>
           <Button

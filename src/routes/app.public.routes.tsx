@@ -1,9 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { OnboardingStep1 } from '@/screens/public/onboarding/step1';
-import { OnboardingStep2 } from '@/screens/public/onboarding/step2';
-import { OnboardingStep3 } from '@/screens/public/onboarding/step3';
-import { OnboardingStep4 } from '@/screens/public/onboarding/step4';
+import { OnboardingStep1 } from '@/screens/public/onboarding/screens/step1';
+import { OnboardingStep2 } from '@/screens/public/onboarding/screens/step2';
+import { OnboardingStep3 } from '@/screens/public/onboarding/screens/step3';
+import { OnboardingStep4 } from '@/screens/public/onboarding/screens/step4';
+import { SignIn } from '@/screens/public/signIn/screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,8 @@ export function PublicRoutes() {
       <Stack.Screen name="Onboarding2" component={OnboardingStep2} />
       <Stack.Screen name="Onboarding3" component={OnboardingStep3} />
       <Stack.Screen name="Onboarding4" component={OnboardingStep4} />
+
+      <Stack.Screen name="SignIn" component={SignIn} />
     </Stack.Navigator>
   );
 }

@@ -1,16 +1,15 @@
-import { useNavigation } from '@react-navigation/native';
+import { CommonActions, useNavigation } from '@react-navigation/native';
 import { Text, View } from 'react-native';
 
-import { Button } from './components/button-default';
-
 import { ChevronLeft, ChevronRight, Logo } from '@/assets';
+import { Button } from '@/components/atoms/button-default';
 import { Container } from '@/components/atoms/container';
-import { styleSignIn as s } from '@/screens/public/onboarding/style';
+import { style as s } from '@/screens/public/onboarding/style';
 import theme from '@/styles/theme';
 import { RootNavigationProp } from '@/types/screens';
 
-export function OnboardingStep2() {
-  const { navigate, goBack } = useNavigation<RootNavigationProp>();
+export function OnboardingStep4() {
+  const { dispatch, goBack } = useNavigation<RootNavigationProp>();
 
   return (
     <Container>
@@ -19,22 +18,29 @@ export function OnboardingStep2() {
       </View>
 
       <View style={s.content}>
-        <Text style={s.title}>Conecte-se</Text>
+        <Text style={s.title}>Pronto para começar?</Text>
         <Text style={s.subtitle}>
-          Encontre parceiros de treino, compartilhe dicas e desafie-se a alcançar novos patamares
-          juntos.
+          Junte-se a nós e faça parte de uma comunidade que se apoia, se inspira e se diverte
+          enquanto busca uma vida mais saudável e ativa!
         </Text>
         <View style={s.btnContainer}>
           <Button
+            onPress={() => goBack()}
             label="Voltar"
             variant="ghost"
-            onPress={() => goBack()}
             iconLeft={<ChevronLeft color={theme.colors.neutrals[950]} />}
           />
           <Button
             label="Continuar"
             textMode="dark"
-            onPress={() => navigate('Onboarding3')}
+            onPress={() =>
+              dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [{ name: 'SignIn' }],
+                }),
+              )
+            }
             iconRight={<ChevronRight color={theme.colors.neutrals[50]} />}
           />
         </View>

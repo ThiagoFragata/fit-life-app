@@ -5,6 +5,8 @@ export type RootParamList = {
   Onboarding2: undefined;
   Onboarding3: undefined;
   Onboarding4: undefined;
+
+  SignIn: undefined;
 };
 
 type RootNavigationProp = NavigationProp<RootParamList>;
