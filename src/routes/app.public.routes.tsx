@@ -12,6 +12,7 @@ export function PublicRoutes() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        animation: 'ios',
       }}>
       <Stack.Screen name="Onboarding1" component={OnboardingStep1} />
       <Stack.Screen name="Onboarding2" component={OnboardingStep2} />

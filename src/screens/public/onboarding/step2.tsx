@@ -1,9 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
-import { Logo } from '@/assets';
+import { Button } from './components/button-default';
+
+import { ChevronLeft, ChevronRight, Logo } from '@/assets';
 import { Container } from '@/components/atoms/container';
 import { styleSignIn as s } from '@/screens/public/onboarding/style';
+import theme from '@/styles/theme';
 import { RootNavigationProp } from '@/types/screens';
 
 export function OnboardingStep2() {
@@ -21,12 +24,19 @@ export function OnboardingStep2() {
           Encontre parceiros de treino, compartilhe dicas e desafie-se a alcançar novos patamares
           juntos.
         </Text>
-        <Pressable style={s.btnContainer} onPress={() => goBack()}>
-          <Text style={s.btnText}>Voltar</Text>
-        </Pressable>
-        <Pressable style={s.btnContainer} onPress={() => navigate('Onboarding3')}>
-          <Text style={s.btnText}>Continuar</Text>
-        </Pressable>
+        <View style={s.btnContainer}>
+          <Button
+            onPress={() => goBack()}
+            label="Voltar"
+            variant="ghost"
+            iconLeft={<ChevronLeft color={theme.colors.neutrals[950]} />}
+          />
+          <Button
+            onPress={() => navigate('Onboarding3')}
+            label="Continuar"
+            iconRight={<ChevronRight color={theme.colors.neutrals[950]} />}
+          />
+        </View>
       </View>
     </Container>
   );

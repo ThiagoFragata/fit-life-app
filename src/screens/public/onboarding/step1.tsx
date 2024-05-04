@@ -1,9 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
-import { Logo } from '@/assets';
+import { Button } from './components/button-default';
+
+import { ChevronRight, Logo } from '@/assets';
 import { Container } from '@/components/atoms/container';
 import { styleSignIn as s } from '@/screens/public/onboarding/style';
+import theme from '@/styles/theme';
 import { RootNavigationProp } from '@/types/screens';
 
 export function OnboardingStep1() {
@@ -21,9 +24,11 @@ export function OnboardingStep1() {
           Estamos animados em tê-lo(a) a bordo da nossa rede social exclusiva para membros da
           academia!
         </Text>
-        <Pressable style={s.btnContainer} onPress={() => navigate('Onboarding2')}>
-          <Text style={s.btnText}>Continuar</Text>
-        </Pressable>
+        <Button
+          onPress={() => navigate('Onboarding2')}
+          label="Continuar"
+          iconRight={<ChevronRight color={theme.colors.neutrals[950]} />}
+        />
       </View>
     </Container>
   );
