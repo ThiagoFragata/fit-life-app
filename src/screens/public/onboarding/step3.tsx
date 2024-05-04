@@ -32,9 +32,10 @@ export function OnboardingStep3() {
             iconLeft={<ChevronLeft color={theme.colors.neutrals[950]} />}
           />
           <Button
-            onPress={() => navigate('Onboarding4')}
             label="Continuar"
-            iconRight={<ChevronRight color={theme.colors.neutrals[950]} />}
+            textMode="dark"
+            onPress={() => navigate('Onboarding4')}
+            iconRight={<ChevronRight color={theme.colors.neutrals[50]} />}
           />
         </View>
       </View>

@@ -24,11 +24,14 @@ export function OnboardingStep1() {
           Estamos animados em tê-lo(a) a bordo da nossa rede social exclusiva para membros da
           academia!
         </Text>
-        <Button
-          onPress={() => navigate('Onboarding2')}
-          label="Continuar"
-          iconRight={<ChevronRight color={theme.colors.neutrals[950]} />}
-        />
+        <View style={s.btnContainer}>
+          <Button
+            textMode="dark"
+            label="Continuar"
+            onPress={() => navigate('Onboarding2')}
+            iconRight={<ChevronRight color={theme.colors.neutrals[50]} />}
+          />
+        </View>
       </View>
     </Container>
   );

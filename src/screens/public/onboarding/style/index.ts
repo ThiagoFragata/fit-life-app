@@ -28,6 +28,7 @@ export const styleSignIn = StyleSheet.create({
     gap: RFValue(8),
   },
   btnDefault: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -48,8 +49,14 @@ export const styleSignIn = StyleSheet.create({
     marginTop: RFValue(16),
     color: theme.colors.neutrals[950],
   },
-  btnText: {
+  btnTextLight: {
     fontWeight: '500',
     fontSize: RFValue(12),
+    color: theme.colors.neutrals[950],
+  },
+  btnTextDark: {
+    fontWeight: '500',
+    fontSize: RFValue(12),
+    color: theme.colors.neutrals[50],
   },
 });

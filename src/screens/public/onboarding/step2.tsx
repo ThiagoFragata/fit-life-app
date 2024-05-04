@@ -26,15 +26,16 @@ export function OnboardingStep2() {
         </Text>
         <View style={s.btnContainer}>
           <Button
-            onPress={() => goBack()}
             label="Voltar"
             variant="ghost"
+            onPress={() => goBack()}
             iconLeft={<ChevronLeft color={theme.colors.neutrals[950]} />}
           />
           <Button
-            onPress={() => navigate('Onboarding3')}
             label="Continuar"
-            iconRight={<ChevronRight color={theme.colors.neutrals[950]} />}
+            textMode="dark"
+            onPress={() => navigate('Onboarding3')}
+            iconRight={<ChevronRight color={theme.colors.neutrals[50]} />}
           />
         </View>
       </View>

@@ -8,13 +8,21 @@ interface ButtonProps extends PressableProps {
   variant?: 'default' | 'ghost';
   iconLeft?: ReactElement;
   iconRight?: ReactElement;
+  textMode?: 'dark' | 'light';
 }
 
-export function Button({ label, variant = 'default', iconLeft, iconRight, ...props }: ButtonProps) {
+export function Button({
+  label,
+  iconLeft,
+  iconRight,
+  textMode = 'light',
+  variant = 'default',
+  ...props
+}: ButtonProps) {
   return (
     <Pressable style={variant === 'default' ? s.btnDefault : s.btnGhost} {...props}>
       {iconLeft}
-      <Text style={s.btnText}>{label}</Text>
+      <Text style={textMode === 'dark' ? s.btnTextDark : s.btnTextLight}>{label}</Text>
       {iconRight}
     </Pressable>
   );
