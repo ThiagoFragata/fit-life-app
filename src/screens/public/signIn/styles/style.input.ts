@@ -2,7 +2,9 @@ import { StyleSheet } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const styleInput = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+  },
   label: {
     fontWeight: '500',
     fontSize: RFValue(12),

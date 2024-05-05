@@ -5,3 +5,4 @@ export { default as ChevronRight } from '@/assets/icon-right.svg';
 export { default as Lock } from '@/assets/lock.svg';
 export { default as Logo } from '@/assets/logo.svg';
 export { default as Mail } from '@/assets/mail.svg';
+export { default as User } from '@/assets/user.svg';

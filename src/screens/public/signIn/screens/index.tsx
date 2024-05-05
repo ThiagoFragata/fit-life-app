@@ -1,4 +1,6 @@
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import { Lock, Logo, Mail } from '@/assets';
 import { Button } from '@/components/atoms/button-default';
@@ -6,11 +8,14 @@ import { Container } from '@/components/atoms/container';
 import { Input } from '@/screens/public/signIn/components/input';
 import { style as s } from '@/screens/public/signIn/styles';
 import theme from '@/styles/theme';
+import { RootNavigationProp } from '@/types/screens';
 
 export function SignIn() {
+  const { navigate } = useNavigation<RootNavigationProp>();
+
   return (
     <Container>
-      <ScrollView style={s.content} showsVerticalScrollIndicator={false}>
+      <KeyboardAwareScrollView style={s.content} showsVerticalScrollIndicator={false}>
         <Logo />
 
         <Text style={s.title}>Entre para se conectar com sua comunidade fitness</Text>
@@ -40,12 +45,12 @@ export function SignIn() {
 
           <View style={s.createAccount}>
             <Text>Ainda não tem uma conta?</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate('SignUp1')}>
               <Text style={s.textCreateAccount}>Crie aqui</Text>
             </TouchableOpacity>
           </View>
         </View>
-      </ScrollView>
+      </KeyboardAwareScrollView>
     </Container>
   );
 }

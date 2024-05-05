@@ -7,6 +7,8 @@ export type RootParamList = {
   Onboarding4: undefined;
 
   SignIn: undefined;
+  SignUp1: undefined;
+  SignUp2: undefined;
 };
 
 type RootNavigationProp = NavigationProp<RootParamList>;

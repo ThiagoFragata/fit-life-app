@@ -5,6 +5,8 @@ import { OnboardingStep2 } from '@/screens/public/onboarding/screens/step2';
 import { OnboardingStep3 } from '@/screens/public/onboarding/screens/step3';
 import { OnboardingStep4 } from '@/screens/public/onboarding/screens/step4';
 import { SignIn } from '@/screens/public/signIn/screens';
+import { SignUpStep1 } from '@/screens/public/signUp/screens/step1';
+import { SignUpStep2 } from '@/screens/public/signUp/screens/step2';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +22,16 @@ export function PublicRoutes() {
       <Stack.Screen name="Onboarding3" component={OnboardingStep3} />
       <Stack.Screen name="Onboarding4" component={OnboardingStep4} />
 
-      <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{
+          animation: 'fade',
+        }}
+      />
+
+      <Stack.Screen name="SignUp1" component={SignUpStep1} />
+      <Stack.Screen name="SignUp2" component={SignUpStep2} />
     </Stack.Navigator>
   );
 }
