@@ -1,5 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { ForgotPasswordStep1 } from '@/screens/public/forgotPassword/screens/step1';
+import { ForgotPasswordStep2 } from '@/screens/public/forgotPassword/screens/step2';
+import { ForgotPasswordStep3 } from '@/screens/public/forgotPassword/screens/step3';
 import { OnboardingStep1 } from '@/screens/public/onboarding/screens/step1';
 import { OnboardingStep2 } from '@/screens/public/onboarding/screens/step2';
 import { OnboardingStep3 } from '@/screens/public/onboarding/screens/step3';
@@ -32,6 +35,10 @@ export function PublicRoutes() {
 
       <Stack.Screen name="SignUp1" component={SignUpStep1} />
       <Stack.Screen name="SignUp2" component={SignUpStep2} />
+
+      <Stack.Screen name="forgotPasswordStep1" component={ForgotPasswordStep1} />
+      <Stack.Screen name="forgotPasswordStep2" component={ForgotPasswordStep2} />
+      <Stack.Screen name="forgotPasswordStep3" component={ForgotPasswordStep3} />
     </Stack.Navigator>
   );
 }

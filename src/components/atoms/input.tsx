@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, TextInputProps, TouchableOpacity, View } f
 import { RFValue } from 'react-native-responsive-fontsize';
 
 interface InputProps extends TextInputProps {
-  label: string;
+  label?: string;
   icon?: ReactElement;
   isPasswordInput?: boolean;
 }

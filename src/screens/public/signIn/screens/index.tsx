@@ -5,7 +5,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { Lock, Logo, Mail } from '@/assets';
 import { Button } from '@/components/atoms/button-default';
 import { Container } from '@/components/atoms/container';
-import { Input } from '@/screens/public/signIn/components/input';
+import { Input } from '@/components/atoms/input';
 import { style as s } from '@/screens/public/signIn/styles';
 import theme from '@/styles/theme';
 import { RootNavigationProp } from '@/types/screens';
@@ -34,7 +34,9 @@ export function SignIn() {
             placeholder="Digite sua senha"
             isPasswordInput
           />
-          <TouchableOpacity style={s.forgotPassword}>
+          <TouchableOpacity
+            style={s.forgotPassword}
+            onPress={() => navigate('forgotPasswordStep1')}>
             <Text style={s.textForgotPassword}>Esqueci minha senha</Text>
           </TouchableOpacity>
         </View>
