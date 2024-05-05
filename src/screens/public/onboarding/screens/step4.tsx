@@ -4,12 +4,14 @@ import { Text, View } from 'react-native';
 import { ChevronLeft, ChevronRight, Logo } from '@/assets';
 import { Button } from '@/components/atoms/button-default';
 import { Container } from '@/components/atoms/container';
+import { useOnboardingStore } from '@/screens/public/onboarding/stores/useOnboarding';
 import { style as s } from '@/screens/public/onboarding/style';
 import theme from '@/styles/theme';
 import { RootNavigationProp } from '@/types/screens';
 
 export function OnboardingStep4() {
   const { dispatch, goBack } = useNavigation<RootNavigationProp>();
+  const { onViewOnboarding } = useOnboardingStore();
 
   return (
     <Container>
@@ -33,14 +35,15 @@ export function OnboardingStep4() {
           <Button
             label="Continuar"
             textMode="dark"
-            onPress={() =>
+            onPress={() => {
               dispatch(
                 CommonActions.reset({
                   index: 0,
                   routes: [{ name: 'SignIn' }],
                 }),
-              )
-            }
+              );
+              onViewOnboarding();
+            }}
             iconRight={<ChevronRight color={theme.colors.neutrals[50]} />}
           />
         </View>
