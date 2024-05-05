@@ -36,7 +36,7 @@ export function SignIn() {
           />
           <TouchableOpacity
             style={s.forgotPassword}
-            onPress={() => navigate('forgotPasswordStep1')}>
+            onPress={() => navigate('ForgotPasswordStep1')}>
             <Text style={s.textForgotPassword}>Esqueci minha senha</Text>
           </TouchableOpacity>
         </View>

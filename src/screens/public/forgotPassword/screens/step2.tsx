@@ -34,7 +34,7 @@ export function ForgotPasswordStep2() {
             <Button
               label="Continuar"
               textMode="dark"
-              onPress={() => navigate('forgotPasswordStep3')}
+              onPress={() => navigate('ForgotPasswordStep3')}
             />
           </View>
         </View>

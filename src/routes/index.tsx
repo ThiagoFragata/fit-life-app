@@ -1,11 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native';
 
-import { PublicRoutes } from '@/routes/app.public.routes';
+import { PublicRoutes } from './app.public.routes';
 
 export function Routes() {
   return (
     <NavigationContainer>
       <PublicRoutes />
+      {/* <PrivateRoutes /> */}
     </NavigationContainer>
   );
 }

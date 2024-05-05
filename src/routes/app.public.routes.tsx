@@ -36,9 +36,9 @@ export function PublicRoutes() {
       <Stack.Screen name="SignUp1" component={SignUpStep1} />
       <Stack.Screen name="SignUp2" component={SignUpStep2} />
 
-      <Stack.Screen name="forgotPasswordStep1" component={ForgotPasswordStep1} />
-      <Stack.Screen name="forgotPasswordStep2" component={ForgotPasswordStep2} />
-      <Stack.Screen name="forgotPasswordStep3" component={ForgotPasswordStep3} />
+      <Stack.Screen name="ForgotPasswordStep1" component={ForgotPasswordStep1} />
+      <Stack.Screen name="ForgotPasswordStep2" component={ForgotPasswordStep2} />
+      <Stack.Screen name="ForgotPasswordStep3" component={ForgotPasswordStep3} />
     </Stack.Navigator>
   );
 }

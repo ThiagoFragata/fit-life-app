@@ -1,3 +1,4 @@
+export { default as Camera } from '@/assets/camera.svg';
 export { default as EllipseCoral } from '@/assets/ellipse-coral.svg';
 export { default as EllipseCyan } from '@/assets/ellipse-cyan.svg';
 export { default as ChevronLeft } from '@/assets/icon-left.svg';
