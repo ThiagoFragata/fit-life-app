@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { Home } from '@/screens/private/home/screens';
+import HomeScreen from '@/screens/private/home/screens/homeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,7 +11,7 @@ export function PrivateRoutes() {
         headerShown: false,
         animation: 'ios',
       }}>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   );
 }
