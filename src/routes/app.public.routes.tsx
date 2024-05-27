@@ -8,7 +8,7 @@ import { OnboardingStep2 } from '@/screens/public/onboarding/screens/step2';
 import { OnboardingStep3 } from '@/screens/public/onboarding/screens/step3';
 import { OnboardingStep4 } from '@/screens/public/onboarding/screens/step4';
 import { useOnboardingStore } from '@/screens/public/onboarding/stores/useOnboarding';
-import { SignIn } from '@/screens/public/signIn/screens';
+import SignInScreen from '@/screens/public/signIn/screens/signInScreen';
 import { SignUpStep1 } from '@/screens/public/signUp/screens/step1';
 import { SignUpStep2 } from '@/screens/public/signUp/screens/step2';
 
@@ -31,7 +31,7 @@ export function PublicRoutes() {
 
       <Stack.Screen
         name="SignIn"
-        component={SignIn}
+        component={SignInScreen}
         options={{
           animation: 'fade',
         }}
