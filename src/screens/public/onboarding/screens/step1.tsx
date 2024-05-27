@@ -18,7 +18,7 @@ export function OnboardingStep1() {
       </View>
 
       <View style={s.content}>
-        <Text style={s.title}>Bem-vido à comunidade Fitness</Text>
+        <Text style={s.title}>Bem-vindo à comunidade Fitness</Text>
         <Text style={s.subtitle}>
           Estamos animados em tê-lo(a) a bordo da nossa rede social exclusiva para membros da
           academia!
