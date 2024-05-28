@@ -7,8 +7,8 @@ import { OnboardingStep3 } from '@/screens/public/onboarding/screens/step3';
 import { OnboardingStep4 } from '@/screens/public/onboarding/screens/step4';
 import { useOnboardingStore } from '@/screens/public/onboarding/stores/useOnboarding';
 import SignInScreen from '@/screens/public/signIn/screens/signInScreen';
-import { SignUpStep1 } from '@/screens/public/signUp/screens/step1';
-import { SignUpStep2 } from '@/screens/public/signUp/screens/step2';
+import SignUpStep1Screen from '@/screens/public/signUp/screens/signUpStep1Screen';
+import SignUpStep2Screen from '@/screens/public/signUp/screens/signUpStep2Screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,8 +35,8 @@ export function PublicRoutes() {
         }}
       />
 
-      <Stack.Screen name="SignUp1" component={SignUpStep1} />
-      <Stack.Screen name="SignUp2" component={SignUpStep2} />
+      <Stack.Screen name="SignUp1" component={SignUpStep1Screen} />
+      <Stack.Screen name="SignUp2" component={SignUpStep2Screen} />
 
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
     </Stack.Navigator>
