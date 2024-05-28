@@ -14,6 +14,7 @@ const Stack = createNativeStackNavigator();
 
 export function PublicRoutes() {
   const { isViewOnboarding } = useOnboardingStore();
+  console.log(isViewOnboarding);
 
   return (
     <Stack.Navigator
