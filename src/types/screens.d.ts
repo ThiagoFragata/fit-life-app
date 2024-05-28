@@ -15,4 +15,14 @@ export type RootParamList = {
   ForgotPasswordStep3: undefined;
 };
 
+export type RouteNameList =
+  | 'Onboarding1'
+  | 'Onboarding2'
+  | 'Onboarding3'
+  | 'Onboarding4'
+  | 'SignIn'
+  | 'SignUp1'
+  | 'SignUp2'
+  | 'ForgotPassword';
+
 type RootNavigationProp = NavigationProp<RootParamList>;

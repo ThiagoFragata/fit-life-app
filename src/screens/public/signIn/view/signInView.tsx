@@ -8,6 +8,7 @@ import { Button } from '@/components/atoms/button-default';
 import { Container } from '@/components/atoms/container';
 import { Input } from '@/components/atoms/input';
 import theme from '@/styles/theme';
+import { RouteNameList } from '@/types/screens';
 
 interface SignInViewProps {
   email: string;
@@ -18,7 +19,7 @@ interface SignInViewProps {
   onPasswordChange: React.Dispatch<React.SetStateAction<string>>;
 
   onSignInPress: () => void;
-  onNavigate: (screen: any) => void;
+  navigate: (screen: RouteNameList) => void;
 }
 
 const SignInView: React.FC<SignInViewProps> = ({
@@ -28,7 +29,7 @@ const SignInView: React.FC<SignInViewProps> = ({
   onEmailChange,
   onPasswordChange,
   onSignInPress,
-  onNavigate,
+  navigate,
 }) => (
   <Container>
     <KeyboardAwareScrollView style={s.content} showsVerticalScrollIndicator={false}>
@@ -56,9 +57,7 @@ const SignInView: React.FC<SignInViewProps> = ({
           value={password}
         />
 
-        <TouchableOpacity
-          style={s.forgotPassword}
-          onPress={() => onNavigate('ForgotPasswordStep1')}>
+        <TouchableOpacity style={s.forgotPassword} onPress={() => navigate('ForgotPassword')}>
           <Text style={s.textForgotPassword}>Esqueci minha senha</Text>
         </TouchableOpacity>
       </View>
@@ -70,7 +69,7 @@ const SignInView: React.FC<SignInViewProps> = ({
 
         <View style={s.createAccount}>
           <Text>Ainda não tem uma conta?</Text>
-          <TouchableOpacity onPress={() => onNavigate('SignUp1')}>
+          <TouchableOpacity onPress={() => navigate('SignUp1')}>
             <Text style={s.textCreateAccount}>Crie aqui</Text>
           </TouchableOpacity>
         </View>

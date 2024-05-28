@@ -13,6 +13,7 @@ export const style = StyleSheet.create({
     fontWeight: '400',
   },
   title: {
+    marginTop: RFValue(32),
     fontSize: RFValue(28),
     fontWeight: '600',
   },

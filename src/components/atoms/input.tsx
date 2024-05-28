@@ -16,7 +16,12 @@ export function Input({ label, icon, isPasswordInput = false, ...props }: InputP
       <Text style={s.label}>{label}</Text>
       <View style={s.input}>
         {icon}
-        <TextInput style={s.textInput} secureTextEntry={keyboardSecure} {...props} />
+        <TextInput
+          style={s.textInput}
+          secureTextEntry={keyboardSecure}
+          autoCapitalize="none"
+          {...props}
+        />
         {isPasswordInput && (
           <TouchableOpacity onPress={() => setKeyboardSecure((prev) => !prev)}>
             {keyboardSecure ? <Text>mostrar senha</Text> : <Text>esconder senha</Text>}

@@ -18,12 +18,12 @@ function useSignInViewModel() {
 
   return {
     email,
+    navigate,
     password,
     isPending,
     onEmailChange: setEmail,
     onPasswordChange: setPassword,
     onSignInPress: handleSignIn,
-    onNavigate: navigate,
   };
 }
 
