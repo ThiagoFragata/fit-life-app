@@ -1,5 +1,5 @@
-import ForgotPasswordView from '../view/forgotPasswordView';
-import useForgotPasswordViewModel from '../viewModel/forgotPasswordViewModel';
+import useForgotPasswordViewModel from '../viewModels/forgotPasswordViewModel';
+import ForgotPasswordView from '../views/forgotPasswordView';
 
 const ForgotPasswordScreen: React.FC = () => {
   const viewModel = useForgotPasswordViewModel();
