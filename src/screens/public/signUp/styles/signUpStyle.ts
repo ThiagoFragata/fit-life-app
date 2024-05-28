@@ -27,6 +27,9 @@ export const style = StyleSheet.create({
     flexDirection: 'row',
     gap: RFValue(16),
   },
+  textError: {
+    color: theme.colors.danger[400],
+  },
   btnContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
