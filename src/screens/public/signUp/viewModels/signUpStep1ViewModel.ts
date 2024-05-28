@@ -7,25 +7,15 @@ import useUserStore from '../stores/useUserStore';
 
 import { RootNavigationProp } from '@/types/screens';
 
-function useSignUpViewModel() {
+function useSignUpStep1ViewModel() {
   const { navigate } = useNavigation<RootNavigationProp>();
-  // const { mutate, isPending } = useSignUpMutation();
-
-  // const handleSendEmail = () => {
-  //   mutate({ email });
-  // };
-
   const { createUser, clearUsers } = useUserStore();
 
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const { control, handleSubmit } = useForm({
     resolver: yupResolver(schemaSignUpStep1),
   });
 
-  const onSubmit = (data: SignUpStep1Type) => {
+  const onSubmitUser = (data: SignUpStep1Type) => {
     try {
       createUser(data);
       navigate('SignUp2');
@@ -36,12 +26,11 @@ function useSignUpViewModel() {
   };
 
   return {
-    errors,
     control,
     navigate,
-    onSubmit,
-    handleSubmit,
+    onSubmitUser,
+    handleSubmitUser: handleSubmit,
   };
 }
 
-export default useSignUpViewModel;
+export default useSignUpStep1ViewModel;

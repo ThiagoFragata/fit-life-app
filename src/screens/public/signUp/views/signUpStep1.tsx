@@ -9,22 +9,22 @@ import { Logo } from '@/assets';
 import { Button } from '@/components/atoms/button-default';
 import { Container } from '@/components/atoms/container';
 import { Input } from '@/components/atoms/input';
-import { RouteNameList } from '@/types/screens';
+import { RootNavigationProp } from '@/types/screens';
 
 interface SignUpStep1ViewProps {
-  control: Control;
+  control: Control<SignUpStep1Type, any>;
 
-  onSubmit: (data: SignUpStep1Type) => void;
-  navigate: (screen: RouteNameList) => void;
+  navigate: RootNavigationProp['navigate'];
+  onSubmitUser: (data: SignUpStep1Type) => void;
 
-  handleSubmit: UseFormHandleSubmit<SignUpStep1Type, undefined>;
+  handleSubmitUser: UseFormHandleSubmit<SignUpStep1Type, undefined>;
 }
 
 const SignUpStep1View: React.FC<SignUpStep1ViewProps> = ({
-  navigate,
   control,
-  handleSubmit,
-  onSubmit,
+  navigate,
+  onSubmitUser,
+  handleSubmitUser,
 }: SignUpStep1ViewProps) => (
   <Container>
     <KeyboardAwareScrollView style={s.content} showsVerticalScrollIndicator={false}>
@@ -63,6 +63,7 @@ const SignUpStep1View: React.FC<SignUpStep1ViewProps> = ({
                 <Input
                   label="*Sobrenome"
                   placeholder="Digite seu sobrenome"
+                  autoCapitalize="sentences"
                   onBlur={onBlur}
                   onChangeText={onChange}
                   value={value}
@@ -102,7 +103,7 @@ const SignUpStep1View: React.FC<SignUpStep1ViewProps> = ({
 
       <View style={s.formFooter}>
         <View style={s.btnContainer}>
-          <Button label="Continuar" textMode="dark" onPress={handleSubmit(onSubmit)} />
+          <Button label="Continuar" textMode="dark" onPress={handleSubmitUser(onSubmitUser)} />
         </View>
       </View>
     </KeyboardAwareScrollView>
