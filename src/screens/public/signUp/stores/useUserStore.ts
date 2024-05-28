@@ -7,15 +7,15 @@ interface UserData {
 }
 
 interface UserStore {
-  users: UserData | null;
+  user: UserData | null;
   createUser: (userData: UserData) => void;
   clearUsers: () => void;
 }
 
 const useUserStore = create<UserStore>((set) => ({
-  users: null,
-  createUser: (userData) => set({ users: userData }),
-  clearUsers: () => set({ users: null }),
+  user: null,
+  createUser: (userData) => set({ user: userData }),
+  clearUsers: () => set({ user: null }),
 }));
 
 export default useUserStore;

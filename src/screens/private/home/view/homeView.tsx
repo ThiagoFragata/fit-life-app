@@ -2,23 +2,21 @@ import { Text, TouchableOpacity, View } from 'react-native';
 
 import { style as s } from '../styles/homeStyle';
 
-import { Camera, Logo } from '@/assets';
+import { LogOut, Logo } from '@/assets';
 import { ContainerHome } from '@/components/atoms/container-home';
 import theme from '@/styles/theme';
 
 interface HomeViewProps {
-  onLogout: () => void;
+  handleLogout: () => void;
 }
 
-const HomeView: React.FC<HomeViewProps> = ({ onLogout }: HomeViewProps) => (
+const HomeView: React.FC<HomeViewProps> = ({ handleLogout }: HomeViewProps) => (
   <ContainerHome>
     <View style={s.header}>
       <Logo width={72} />
-      <TouchableOpacity onPress={onLogout}>
+      <TouchableOpacity onPress={handleLogout}>
+        <LogOut color={theme.colors.neutrals[900]} />
         <Text>Sair</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Camera color={theme.colors.neutrals[900]} />
       </TouchableOpacity>
     </View>
   </ContainerHome>

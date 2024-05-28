@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SignInView from '../view/signInView';
-import useSignInViewModel from '../viewModel/signInViewModel';
+import useSignInViewModel from '../viewModels/signInViewModel';
+import SignInView from '../views/signInView';
 
 const SignInScreen: React.FC = () => {
   const viewModel = useSignInViewModel();

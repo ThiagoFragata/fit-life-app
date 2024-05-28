@@ -13,6 +13,7 @@ import { RootNavigationProp } from '@/types/screens';
 
 interface SignUpStep2ViewProps {
   control: Control<SignUpStep2Type, any>;
+  isPending: boolean;
 
   onSubmitAccount: (data: SignUpStep2Type) => void;
   navigate: RootNavigationProp['navigate'];
@@ -23,6 +24,7 @@ interface SignUpStep2ViewProps {
 const SignUpStep2View: React.FC<SignUpStep2ViewProps> = ({
   control,
   navigate,
+  isPending,
   onSubmitAccount,
   handleSubmitAccount,
 }: SignUpStep2ViewProps) => (
@@ -92,8 +94,9 @@ const SignUpStep2View: React.FC<SignUpStep2ViewProps> = ({
       <View style={s.formFooter}>
         <View style={s.btnContainer}>
           <Button
-            label="Finalizar"
+            label={isPending ? 'Cadastrando' : 'Finalizar'}
             textMode="dark"
+            disabled={isPending}
             onPress={handleSubmitAccount(onSubmitAccount)}
           />
         </View>

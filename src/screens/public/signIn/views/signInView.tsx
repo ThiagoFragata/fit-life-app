@@ -64,7 +64,12 @@ const SignInView: React.FC<SignInViewProps> = ({
 
       <View style={s.formFooter}>
         <View style={s.btnContainer}>
-          <Button label="Entrar" textMode="dark" onPress={onSignInPress} disabled={isPending} />
+          <Button
+            label={isPending ? 'Entrando' : 'Entrar'}
+            textMode="dark"
+            onPress={onSignInPress}
+            disabled={isPending}
+          />
         </View>
 
         <View style={s.createAccount}>
