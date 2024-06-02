@@ -1,10 +1,13 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios, { AxiosError } from 'axios';
+import { AxiosError } from 'axios';
 import { create } from 'zustand';
+
+import { api } from '@/services/axios';
 
 export interface AuthState {
   isAuthenticated: boolean;
   token?: string;
+  isLoading: boolean;
 }
 
 interface AuthActions {
@@ -14,13 +17,12 @@ interface AuthActions {
 
 export const useAuthStore = create<AuthState & AuthActions>()((set) => ({
   isAuthenticated: false,
+  isLoading: true,
   token: undefined,
   onAuthenticated: (token) => {
-    set({ isAuthenticated: true, token });
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-
-    // Adiciona um interceptador para verificar error de token inválido
-    axios.interceptors.response.use(undefined, (error: AxiosError) => {
+    set({ isAuthenticated: true, token, isLoading: false });
+    api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    api.interceptors.response.use(undefined, (error: AxiosError) => {
       if (error.response?.status === 401) {
         useAuthStore.getState().onLogout();
       }
@@ -29,7 +31,7 @@ export const useAuthStore = create<AuthState & AuthActions>()((set) => ({
   },
   onLogout: () => {
     set({ isAuthenticated: false, token: undefined });
-    delete axios.defaults.headers.common['Authorization'];
+    delete api.defaults.headers.common['Authorization'];
   },
 }));
 
@@ -39,7 +41,7 @@ AsyncStorage.getItem('authState')
       const persistedState: AuthState = JSON.parse(data);
       useAuthStore.setState(persistedState);
       if (persistedState.token) {
-        axios.defaults.headers.common['Authorization'] = `Bearer ${persistedState.token}`;
+        api.defaults.headers.common['Authorization'] = `Bearer ${persistedState.token}`;
       }
     }
   })

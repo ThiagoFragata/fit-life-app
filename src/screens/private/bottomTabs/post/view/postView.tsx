@@ -1,3 +1,4 @@
+import * as ImagePicker from 'expo-image-picker';
 import { Control, Controller } from 'react-hook-form';
 import { Text, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
@@ -11,15 +12,23 @@ import { ContainerHome } from '@/components/atoms/container-home';
 import { HeaderScreen } from '@/components/atoms/header';
 import { Input } from '@/components/atoms/input';
 import { Textarea } from '@/components/atoms/textarea';
+import { ActivityIndicatorComponent } from '@/components/molecules/activityIndicator';
 
 interface PostViewProps {
-  image: string | null;
+  image: ImagePicker.ImagePickerAsset | null;
   control: Control<PostType>;
+  isPending: boolean;
   pickImage: () => Promise<void>;
-  handleSubmitPost: () => void;
+  onSubmitPost: () => void;
 }
 
-const PostView: React.FC<PostViewProps> = ({ image, pickImage, control, handleSubmitPost }) => (
+const PostView: React.FC<PostViewProps> = ({
+  image,
+  pickImage,
+  control,
+  onSubmitPost,
+  isPending,
+}) => (
   <ContainerHome>
     <HeaderScreen backLabel="Home" screenLabel="Publicação" />
     <KeyboardAwareScrollView style={s.content} showsVerticalScrollIndicator={false}>
@@ -36,6 +45,7 @@ const PostView: React.FC<PostViewProps> = ({ image, pickImage, control, handleSu
               <Input
                 label="Título"
                 keyboardType="default"
+                autoCapitalize="sentences"
                 placeholder="Digite o título"
                 onChangeText={onChange}
                 value={value}
@@ -51,22 +61,32 @@ const PostView: React.FC<PostViewProps> = ({ image, pickImage, control, handleSu
           rules={{
             required: true,
           }}
-          render={({ field: { onChange, value } }) => (
-            <Textarea
-              label="Descrição"
-              numberOfLines={4}
-              keyboardType="default"
-              placeholder="Digite a descrição"
-              onChangeText={onChange}
-              value={value}
-              multiline
-            />
+          render={({ field: { onChange, value }, fieldState: { error } }) => (
+            <View>
+              <Textarea
+                label="Descrição"
+                numberOfLines={4}
+                keyboardType="default"
+                autoCapitalize="sentences"
+                placeholder="Digite a descrição"
+                onChangeText={onChange}
+                value={value}
+                multiline
+              />
+              <Text style={s.erroMessage}>{error?.message}</Text>
+            </View>
           )}
           name="description"
         />
 
-        <Button label="Publicar" textMode="dark" onPress={handleSubmitPost} />
+        <Button
+          textMode="dark"
+          label={isPending ? 'Enviando' : 'Publicar'}
+          disabled={isPending}
+          onPress={onSubmitPost}
+        />
       </View>
+      {isPending && <ActivityIndicatorComponent />}
     </KeyboardAwareScrollView>
   </ContainerHome>
 );

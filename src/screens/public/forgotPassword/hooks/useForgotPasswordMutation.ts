@@ -2,7 +2,7 @@ import { StackActions, useNavigation } from '@react-navigation/native';
 import { useMutation } from '@tanstack/react-query';
 import { Alert } from 'react-native';
 
-import { ForgotPasswordService } from '../services/forgotPasswordService';
+import { ForgotPasswordService } from '../services/forgot-password.service';
 
 import { RootNavigationProp } from '@/types/screens';
 

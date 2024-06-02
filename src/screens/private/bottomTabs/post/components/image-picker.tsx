@@ -1,16 +1,17 @@
+import * as ImagePicker from 'expo-image-picker';
 import React from 'react';
 import { Button, Image, StyleSheet, View } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export interface ImagePickerComponentProps {
-  image: string | null;
+  image: ImagePicker.ImagePickerAsset | null;
   pickImage: () => Promise<void>;
 }
 
 export function ImagePickerComponent({ image, pickImage }: ImagePickerComponentProps) {
   return (
     <View style={styles.container}>
-      {image && <Image source={{ uri: image }} style={styles.image} />}
+      {image && <Image source={{ uri: image.uri }} style={styles.image} />}
       <Button title="Escolher Imagem" onPress={pickImage} />
     </View>
   );

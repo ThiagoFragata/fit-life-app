@@ -13,6 +13,10 @@ export type RootParamList = {
   ForgotPasswordStep1: undefined;
   ForgotPasswordStep2: undefined;
   ForgotPasswordStep3: undefined;
+
+  Home: undefined;
+  Profile: undefined;
+  Post: undefined;
 };
 
 export type RouteNameList =

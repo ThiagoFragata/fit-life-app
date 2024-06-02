@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import { Alert } from 'react-native';
 
-import { SignUpService } from '../services/signUpService';
+import { SignUpService } from '../services/sign-up.service';
 
 import { useAuthStore } from '@/common/stores/useAuthStore';
 

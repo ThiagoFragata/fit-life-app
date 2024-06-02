@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import { Alert } from 'react-native';
 
-import { SignInService } from '../services/signInService';
+import { SignInService } from '../services/sign-in.service';
 
 import { useAuthStore } from '@/common/stores/useAuthStore';
 
@@ -21,8 +21,8 @@ export function useSignInMutation() {
     onError: (error) => {
       Alert.alert('Ops, algo deu errado!', error.message);
     },
-    onSuccess: (data) => {
-      onAuthenticated(data);
+    onSuccess: (token) => {
+      onAuthenticated(token);
     },
   });
 }
