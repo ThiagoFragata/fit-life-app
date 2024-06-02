@@ -2,6 +2,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { Control, Controller } from 'react-hook-form';
 import { Text, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 import { ImagePickerComponent } from '../components/image-picker';
 import { PostType } from '../models/postModel';
@@ -31,7 +32,10 @@ const PostView: React.FC<PostViewProps> = ({
 }) => (
   <ContainerHome>
     <HeaderScreen backLabel="Home" screenLabel="Publicação" />
-    <KeyboardAwareScrollView style={s.content} showsVerticalScrollIndicator={false}>
+    <KeyboardAwareScrollView
+      style={s.content}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ paddingBottom: RFValue(16) }}>
       <ImagePickerComponent image={image} pickImage={pickImage} />
 
       <View style={s.form}>
@@ -69,6 +73,7 @@ const PostView: React.FC<PostViewProps> = ({
                 keyboardType="default"
                 autoCapitalize="sentences"
                 placeholder="Digite a descrição"
+                textAlignVertical="top"
                 onChangeText={onChange}
                 value={value}
                 multiline

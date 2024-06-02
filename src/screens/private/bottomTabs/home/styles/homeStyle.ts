@@ -12,7 +12,7 @@ export const style = StyleSheet.create({
   },
   imageContent: {
     width: '100%',
-    height: RFValue(264),
+    height: RFValue(400),
     borderRadius: RFValue(24),
   },
   listContent: {

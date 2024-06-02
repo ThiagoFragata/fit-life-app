@@ -9,7 +9,6 @@ export const style = StyleSheet.create({
   },
   form: {
     marginTop: RFValue(16),
-    gap: RFValue(24),
   },
   input: {
     borderWidth: RFValue(1),

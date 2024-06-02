@@ -26,17 +26,18 @@ export function HeaderScreen({ screenLabel, backLabel }: HeaderScreenProps) {
 
 export const s = StyleSheet.create({
   header: {
-    marginTop: RFValue(16),
+    backgroundColor: 'transparent',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginVertical: RFValue(8),
   },
   btnBack: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   titleScreen: {
-    zIndex: -10,
+    zIndex: -100,
     width: '100%',
     position: 'absolute',
     fontSize: RFValue(14),
