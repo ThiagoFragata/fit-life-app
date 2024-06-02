@@ -7,16 +7,17 @@ import theme from '@/styles/theme';
 
 interface HeaderScreenProps {
   screenLabel: string;
+  backLabel: string;
 }
 
-export function HeaderScreen({ screenLabel }: HeaderScreenProps) {
+export function HeaderScreen({ screenLabel, backLabel }: HeaderScreenProps) {
   const { goBack } = useNavigation();
 
   return (
     <View style={s.header}>
       <TouchableOpacity style={s.btnBack} onPress={goBack}>
         <ChevronLeft color={theme.colors.neutrals[900]} />
-        <Text>Voltar</Text>
+        <Text>{backLabel}</Text>
       </TouchableOpacity>
       <Text style={s.titleScreen}>{screenLabel}</Text>
     </View>

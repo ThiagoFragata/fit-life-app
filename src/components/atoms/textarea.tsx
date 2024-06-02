@@ -1,0 +1,57 @@
+import { ReactElement, useState } from 'react';
+import { StyleSheet, Text, TextInput, TextInputProps, TouchableOpacity, View } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
+
+interface TextareaProps extends TextInputProps {
+  label?: string;
+  icon?: ReactElement;
+  isPasswordInput?: boolean;
+}
+
+export function Textarea({ label, icon, isPasswordInput = false, ...props }: TextareaProps) {
+  const [keyboardSecure, setKeyboardSecure] = useState(isPasswordInput);
+
+  return (
+    <View style={s.container}>
+      <Text style={s.label}>{label}</Text>
+      <View style={s.input}>
+        {icon}
+        <TextInput
+          style={s.textInput}
+          secureTextEntry={keyboardSecure}
+          autoCapitalize="none"
+          {...props}
+        />
+        {isPasswordInput && (
+          <TouchableOpacity onPress={() => setKeyboardSecure((prev) => !prev)}>
+            {keyboardSecure ? <Text>mostrar senha</Text> : <Text>esconder senha</Text>}
+          </TouchableOpacity>
+        )}
+      </View>
+    </View>
+  );
+}
+
+const s = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  label: {
+    fontWeight: '500',
+    fontSize: RFValue(12),
+    marginBottom: RFValue(4),
+  },
+  input: {
+    borderWidth: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: RFValue(24),
+    paddingHorizontal: RFValue(8),
+  },
+  textInput: {
+    flex: 1,
+    padding: RFValue(12),
+    textAlignVertical: 'auto',
+    minHeight: RFValue(100),
+  },
+});

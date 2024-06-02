@@ -45,6 +45,13 @@ function BottomTabs() {
         }}
       />
       <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ color }) => <User color={color} />,
+        }}
+      />
+      <Tab.Screen
         name="Post"
         component={PostScreen}
         options={{
@@ -52,13 +59,9 @@ function BottomTabs() {
           tabBarStyle: {
             display: 'none',
           },
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          tabBarIcon: ({ color }) => <User color={color} />,
+          tabBarIconStyle: {
+            color: theme.colors.primary[50],
+          },
         }}
       />
     </Tab.Navigator>
@@ -73,7 +76,6 @@ export function PrivateRoutes() {
         animation: 'ios',
       }}>
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
-      <Stack.Screen name="Post" component={PostScreen} />
     </Stack.Navigator>
   );
 }
