@@ -4,6 +4,7 @@ export { default as EllipseCyan } from '@/assets/ellipse-cyan.svg';
 export { default as Home } from '@/assets/home.svg';
 export { default as ChevronLeft } from '@/assets/icon-left.svg';
 export { default as ChevronRight } from '@/assets/icon-right.svg';
+export { default as Info } from '@/assets/info.svg';
 export { default as Lock } from '@/assets/lock.svg';
 export { default as LogOut } from '@/assets/log-out.svg';
 export { default as Logo } from '@/assets/logo.svg';

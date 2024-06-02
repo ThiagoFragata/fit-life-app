@@ -3,7 +3,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 import { Home, Plus, User } from '@/assets';
-import HomeScreen from '@/screens/private/home/screens/homeScreen';
+import HomeScreen from '@/screens/private/bottomTabs/home/screens/homeScreen';
+import PostScreen from '@/screens/private/bottomTabs/post/screens/postScreen';
+import ProfileScreen from '@/screens/private/bottomTabs/profile/screens/profileScreen';
 import theme from '@/styles/theme';
 
 const Stack = createNativeStackNavigator();
@@ -17,8 +19,8 @@ function BottomTabs() {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarActiveTintColor: theme.colors.secondary[50],
-        tabBarInactiveTintColor: theme.colors.secondary[400],
-        tabBarActiveBackgroundColor: theme.colors.secondary[400],
+        tabBarInactiveTintColor: theme.colors.secondary[500],
+        tabBarActiveBackgroundColor: theme.colors.secondary[500],
         tabBarStyle: {
           backgroundColor: theme.colors.secondary[100],
           borderRadius: RFValue(32),
@@ -29,8 +31,10 @@ function BottomTabs() {
           height: RFValue(48),
         },
         tabBarItemStyle: {
+          marginVertical: RFValue(4),
+          marginHorizontal: RFValue(4),
           borderRadius: RFValue(32),
-          height: RFValue(48),
+          height: RFValue(40),
         },
       }}>
       <Tab.Screen
@@ -41,15 +45,18 @@ function BottomTabs() {
         }}
       />
       <Tab.Screen
-        name="Add"
-        component={HomeScreen}
+        name="Post"
+        component={PostScreen}
         options={{
           tabBarIcon: ({ color }) => <Plus color={color} />,
+          tabBarStyle: {
+            display: 'none',
+          },
         }}
       />
       <Tab.Screen
-        name="Perfil"
-        component={HomeScreen}
+        name="Profile"
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ color }) => <User color={color} />,
         }}
@@ -66,6 +73,7 @@ export function PrivateRoutes() {
         animation: 'ios',
       }}>
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      <Stack.Screen name="Post" component={PostScreen} />
     </Stack.Navigator>
   );
 }
