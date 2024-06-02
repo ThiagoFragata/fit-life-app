@@ -22,19 +22,19 @@ function BottomTabs() {
         tabBarInactiveTintColor: theme.colors.secondary[500],
         tabBarActiveBackgroundColor: theme.colors.secondary[500],
         tabBarStyle: {
-          backgroundColor: theme.colors.secondary[100],
+          backgroundColor: 'rgba(255, 244, 237, 0.75)',
           borderRadius: RFValue(32),
           position: 'absolute',
           left: '25%',
           right: '25%',
           bottom: RFValue(20),
-          height: RFValue(48),
+          height: RFValue(40),
         },
         tabBarItemStyle: {
           marginVertical: RFValue(4),
           marginHorizontal: RFValue(4),
           borderRadius: RFValue(32),
-          height: RFValue(40),
+          height: RFValue(32),
         },
       }}>
       <Tab.Screen

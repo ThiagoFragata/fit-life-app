@@ -1,21 +1,11 @@
-import { Text, TouchableOpacity, View } from 'react-native';
-
-import { style as s } from '../styles/profileStyle';
-
-import { LogOut } from '@/assets';
 import { ContainerHome } from '@/components/atoms/container-home';
-import theme from '@/styles/theme';
+import { HeaderScreen } from '@/components/atoms/header';
 
 interface ProfileViewProps {}
 
 const ProfileView: React.FC<ProfileViewProps> = () => (
   <ContainerHome>
-    <View style={s.header}>
-      <TouchableOpacity>
-        <LogOut color={theme.colors.neutrals[900]} />
-        <Text>Voltar</Text>
-      </TouchableOpacity>
-    </View>
+    <HeaderScreen backLabel="Home" screenLabel="Perfil" />
   </ContainerHome>
 );
 
