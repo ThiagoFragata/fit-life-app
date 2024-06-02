@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "fit-life-app",
+    "name": "LifeFit",
     "slug": "fit-life-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,13 +13,19 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": false
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#fffafa"
+      },
+      "supportsTablet": false,
+      "bundleIdentifier": "com.fragata.fitlifeapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#1de2e4"
-      }
+        "backgroundColor": "#fffafa"
+      },
+      "package": "com.fragata.fitlifeapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
